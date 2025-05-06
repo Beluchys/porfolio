@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuenta Regresiva - Beluchys</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #000000, #434343);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      color: #fff;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 20px;
+    }
+
+    .flip-box {
+      background-color: #222;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 12px rgba(0,0,0,0.4);
+      text-align: center;
+      min-width: 90px;
+    }
+
+    .number {
+      font-size: 3em;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .label {
+      margin-top: 8px;
+      font-size: 1em;
+      letter-spacing: 1px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Cuenta regresiva para el cumple de Beluchys 🎂</h1>
+  <div class="countdown">
+    <div class="flip-box">
+      <div id="days" class="number">00</div>
+      <div class="label">DÍAS</div>
+    </div>
+    <div class="flip-box">
+      <div id="hours" class="number">00</div>
+      <div class="label">HORAS</div>
+    </div>
+    <div class="flip-box">
+      <div id="minutes" class="number">00</div>
+      <div class="label">MINUTOS</div>
+    </div>
+    <div class="flip-box">
+      <div id="seconds" class="number">00</div>
+      <div class="label">SEGUNDOS</div>
+    </div>
+  </div>
+
+  <script>
+    function updateCountdown() {
+      const targetDate = new Date("2025-06-05T00:00:00");
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        document.body.innerHTML = "<h1>🎉 ¡Feliz cumpleaños, Beluchys! 🎂</h1>";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((difference / (1000 * 60)) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
+
+      document.getElementById("days").textContent = String(days).padStart(2, '0');
+      document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
