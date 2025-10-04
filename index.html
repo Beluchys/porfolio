@@ -2,101 +2,33 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cuenta Regresiva - Beluchys</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #000000, #434343);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 40px;
-      font-size: 2.5em;
-      color: #fff;
-    }
-
-    .countdown {
-      display: flex;
-      gap: 20px;
-    }
-
-    .flip-box {
-      background-color: #222;
-      padding: 20px 25px;
-      border-radius: 12px;
-      box-shadow: 0 8px 12px rgba(0,0,0,0.4);
-      text-align: center;
-      min-width: 90px;
-    }
-
-    .number {
-      font-size: 3em;
-      font-weight: bold;
-      color: #fff;
-    }
-
-    .label {
-      margin-top: 8px;
-      font-size: 1em;
-      letter-spacing: 1px;
-      color: #ccc;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Gisela Márquez</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎉 Cuenta regresiva para el cumple de Beluchys 🎂</h1>
-  <div class="countdown">
-    <div class="flip-box">
-      <div id="days" class="number">00</div>
-      <div class="label">DÍAS</div>
-    </div>
-    <div class="flip-box">
-      <div id="hours" class="number">00</div>
-      <div class="label">HORAS</div>
-    </div>
-    <div class="flip-box">
-      <div id="minutes" class="number">00</div>
-      <div class="label">MINUTOS</div>
-    </div>
-    <div class="flip-box">
-      <div id="seconds" class="number">00</div>
-      <div class="label">SEGUNDOS</div>
-    </div>
+  <header>
+    <h1>Portfolio Personal</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Experiencia</a></li>
+        <li><a href="education.html">Educación</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Bienvenida</h2>
+    <p>Hola, soy <strong>Gisela Márquez</strong>, Arquitecta IT Pre-Venta y estudiante de <abbr title="Ingeniería en Sistemas">Sistemas</abbr> en la <cite>UAI</cite>.</p>
+    <blockquote cite="https://uai.edu.ar">“El conocimiento aplicado transforma realidades.”</blockquote>
+    <img src="img/computadora-vintage.png.png">
+
   </div>
 
-  <script>
-    function updateCountdown() {
-      const targetDate = new Date("2025-06-05T00:00:00");
-      const now = new Date();
-      const difference = targetDate - now;
-
-      if (difference <= 0) {
-        document.body.innerHTML = "<h1>🎉 ¡Feliz cumpleaños, Beluchys! 🎂</h1>";
-        return;
-      }
-
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((difference / (1000 * 60)) % 60);
-      const seconds = Math.floor((difference / 1000) % 60);
-
-      document.getElementById("days").textContent = String(days).padStart(2, '0');
-      document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+  <footer>
+    <p>&copy; 2025 - Portfolio de Gisela Márquez</p>
+  </footer>
 </body>
 </html>
